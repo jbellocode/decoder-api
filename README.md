@@ -5,7 +5,7 @@ A Spring Boot REST API for building energy monitoring, forecasting, and manageme
 ##  Features
 
 - Role-Based Access Control (RBAC)
-- Energy forecasting with 30-minute moving average
+- Energy forecasting with 120-minutes moving average
 - ASHRAE comfort standards compliance
 - Comprehensive testing (19/19 tests passing)
 - REST API with Spring Security
