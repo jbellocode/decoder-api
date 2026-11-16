@@ -9,17 +9,28 @@ A Spring Boot REST API for building energy monitoring, forecasting, and manageme
 - ASHRAE comfort standards compliance
 - Comprehensive testing (19/19 tests passing)
 - REST API with Spring Security
-- H2 in-memory database
+- H2 SQL database (file-based)
+
+Architecture decisions are documented in [`docs/`](docs/).
 
 ---
 ## Installation
 
 ### Prerequisites
 - Java 17+
-- Maven 3.8+
+- Maven 3.8+ (or use the included Maven wrapper)
 
+### Run
+
+```bash
+git clone https://github.com/jbellocode/decoder-api.git
+cd decoder-api
+./mvnw spring-boot:run
+```
 
 Server runs on: http://localhost:8080
+
+The H2 database file is created in `data/` on first run, and its tables are recreated on each start. The H2 console is available at http://localhost:8080/h2-console.
 
 ## Architecture
 
@@ -29,7 +40,7 @@ Service Layer (Business Logic): QueryService, ForecastService, IngestService
 
 Repository Layer (Data Access): ReadingRepository
 
-Database Layer (H2 in-memory): readings table
+Database Layer (H2 SQL database): buildings and readings tables
 
 ## API Endpoints
 
@@ -76,4 +87,3 @@ Result: Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, BUILD SUCCESS
 ## License
 
 MIT
-EOF
